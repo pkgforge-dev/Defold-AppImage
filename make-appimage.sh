@@ -15,7 +15,7 @@ export DEPLOY_OPENGL=1
 # Deploy dependencies
 mkdir -p ./AppDir/bin
 cp -r /opt/Defold/* ./AppDir/bin
-quick-sharun ./AppDir/bin/*
+quick-sharun ./AppDir/bin/* ./AppDir/bin/packages/jdk*/bin/* ./AppDir/bin/packages/jdk*/lib/*
 
 # Additional changes can be done in between here
 
