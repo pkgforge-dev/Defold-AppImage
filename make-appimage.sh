@@ -15,6 +15,11 @@ export DEPLOY_OPENGL=1
 # Deploy dependencies
 mkdir -p ./AppDir/bin
 cp -r /opt/Defold/* ./AppDir/bin
+
+# this nonsense is needed, otherwise ldd cannot find libraries
+# how does this application work at all??? running ldd on the /opt also shows missing libs
+( cd /AppDir/bin/packages/jdk*/lib/ \
+	&& find ./*/* -type f -name '*.so' -exec ln -s {} ./ \; || :)
 quick-sharun ./AppDir/bin/* ./AppDir/bin/packages/jdk*/bin/* ./AppDir/bin/packages/jdk*/lib/*
 
 # Additional changes can be done in between here
