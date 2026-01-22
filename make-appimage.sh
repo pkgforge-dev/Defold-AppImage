@@ -24,7 +24,11 @@ cp -r /opt/Defold/* ./AppDir/bin
 )
 quick-sharun ./AppDir/bin/* ./AppDir/bin/packages/jdk*/bin/* ./AppDir/bin/packages/jdk*/lib/*
 
-# Additional changes can be done in between here
+# we also have to do this again after deployment
+(
+	cd ./AppDir/shared/lib
+	find ../../bin/packages/ -type f -name '*.so*' -exec ln -s {} ./ \; || :
+)
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
