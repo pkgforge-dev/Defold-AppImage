@@ -1,0 +1,10 @@
+[Desktop Entry]
+StartupWMClass=Defold
+Name=Defold
+Exec=Defold
+Comment=Defold is a completely free to use game engine for development of desktop, mobile and web games.
+Terminal=false
+Type=Application
+Icon=Defold
+Categories=IDE;Development
+
